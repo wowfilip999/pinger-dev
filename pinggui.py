@@ -19,6 +19,15 @@ kn.insert(END, "")
 
 # btn = Button(root,width=120,height=2,font="Italic",fg="red",text="waiting...")
 
+def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
+ btn.forget()
+ settings = Tk()
+ settings.geometry("1400x700")
+
+ btnn = Button(root, width=120, height=2, font="Italic", fg="darkgreen", text="opened settings...", command=settingsfunct)
+ btnn.place(x=40, y=0)
+ settings.mainloop()
+
 def checkping():
     import socket
     try:
@@ -117,7 +126,7 @@ def checkping():
 btn2 = Button(root, width=120, height=2, font="Italic", fg="darkgreen", text="online!")
 btn2.place(x=50, y=0)
 
-btn = Button(root, width=120, height=2, font="Italic", fg="red", text="waiting...")
+btn = Button(root, width=120, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct)
 check = Button(root, width=50, height=2, font="Italic", text="check", command=checkping)
 settings = Button(root, width=40, height=2, text="settings")
 
