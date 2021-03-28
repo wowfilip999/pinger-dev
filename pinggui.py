@@ -22,9 +22,23 @@ kn.insert(END, "")
 def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
  btn.forget()
  settings = Tk()
+ settings.title("pinger > settings") #vimyslíme asi lepší název pro app
  settings.geometry("1400x700")
 
- btnn = Button(root, width=120, height=2, font="Italic", fg="darkgreen", text="opened settings...", command=settingsfunct)
+ def chkset(): #zobrazí entry
+  chkoption = Entry(settings,width=20)
+  chkoption.insert(END , "")
+
+  if chkoption == "all": # z toho nějak vykouzlím nastavení checku :D
+    pass
+
+  if chkotion == "basic":
+    pass
+
+ btnn = Button(root, width=120, height=2, font="Italic",fg="darkgreen",text="opened settings...", command=settingsfunct)
+ testfunkce = Button(settings,width=40,height=2,font="Times",fg="darkblue",text="check options",bg="lightgray",borderwidth=2)
+
+ testfunkce.place(x=500,y=10)
  btnn.place(x=40, y=0)
  settings.mainloop()
 
