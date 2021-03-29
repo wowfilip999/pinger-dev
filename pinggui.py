@@ -12,7 +12,7 @@ root.title("pinger-dev")
 root.geometry("1400x700")
 
 kn = Entry(root, width=30, font="Italic", bg="red")
-png = Entry(root, width=40, font="Italic")
+png = Entry(root, width=40, font="Sans",bg="lightgray")
 png.insert(END, "")
 kn.insert(END, "")
 
@@ -29,21 +29,33 @@ def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
   chkoption = Entry(settings,width=20)
   chkoption.insert(END , "")
 
+
+
   if chkoption == "all": # z toho nějak vykouzlím nastavení checku :D
     pass
 
   if chkotion == "basic":
     pass
 
+
+ def quitset():
+  settings.destroy()
+
+
  btnn = Button(root, width=120, height=2, font="Italic",fg="darkgreen",text="opened settings...", command=settingsfunct)
- testfunkce = Button(settings,width=40,height=2,font="Times",fg="darkblue",text="check options",bg="lightgray",borderwidth=2)
+ quitbtn = Button(settings,width=40, height=2, font="Times",fg="darkblue",text="exit",command=quitset,bg="lightgray",borderwidth=2)
+ testfunkce = Button(settings,width=40,height=2,font="Times",fg="darkblue",text="check option",bg="lightgray",borderwidth=2)
 
  testfunkce.place(x=500,y=10)
+ quitbtn.place(x=500,y=60)
  btnn.place(x=40, y=0)
- settings.mainloop()
+
 
 def checkping():
     import socket
+    class desing:
+      f = ("Italic", 14)
+
     try:
         btn4 = Button(root, width=120, height=2, font="Italic", fg="darkgreen", text="online!")
         t = socket.gethostbyname(png.get())
@@ -76,6 +88,7 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".xyz")
                 inf = Label(root, text="[info] available with .xyz", fg="darkred", font="Italic")
+                inf.config(font=desing.f)
                 inf.place(x=560, y=360)
             except:
                 pass
@@ -83,6 +96,7 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".sk")
                 inf = Label(root, text="[info] available with .sk", fg="darkblue", font="Intalic")
+                inf.config(font=desing.f)
                 inf.place(x=560, y=380)
             except:
                 pass
@@ -90,6 +104,7 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".eu")
                 inf = Label(root, text="[info] available with .eu", fg="darkgreen", font="Italic")
+                inf.config(font=desing.f)
                 inf.place(x=560, y=400)
             except:
                 pass
@@ -97,6 +112,7 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".cz")
                 inf = Label(root, text="[info] available with .cz", fg="darkgreen", font="Italic")
+                inf.config(font=desing.f)
                 inf.place(x=560, y=420)
             except:
                 pass
@@ -104,6 +120,7 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".gg")
                 inf = Label(root, text="[info] available with .gg", fg="darkgreen", font="Italic")
+                inf.config(font=desing.f)
                 inf.place(x=560, y=440)
             except:
                 pass
@@ -111,6 +128,7 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".net")
                 inf = Label(root, text="[info] available with .net", fg="darkgreen", font="Italic")
+                inf.config(font=desing.f)
                 inf.place(x=560, y=460)
             except:
                 pass
@@ -118,6 +136,7 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".pl")
                 inf = Label(root, text="[info] available with .pl", fg="darkgreen", font="Italic")
+                inf.config(font=desing.f)
                 inf.place(x=560, y=480)
             except:
                 pass
@@ -125,6 +144,7 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".tk")
                 inf = Label(root, text="[info] available with .tk", fg="darkblue", font="Italic")
+                inf.config(font=desing.f)
                 inf.place(x=560, y=500)
             except:
                 pass
@@ -132,6 +152,7 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".com")
                 inf = Label(root, text="[info] available with .com", fg="darkgreen", font="Italic")
+                inf.config(font=desing.f)
                 inf.place(x=560, y=520)
             except:
                 pass
@@ -139,6 +160,7 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".online")
                 inf = Label(root, text="[info] available with .online", fg="darkgreen", font="Italic")
+                inf.config(font=desing.f)
                 inf.place(x=560, y=540)
             except:
                 pass
@@ -146,6 +168,7 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".org")
                 inf = Label(root, text="[info] available with .org", fg="darkgreen", font="Italic")
+                inf.config(font=desing.f)
                 inf.place(x=560, y=560)
             except:
                 pass
@@ -156,12 +179,14 @@ btn2.place(x=50, y=0)
 
 btn = Button(root, width=120, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct)
 check = Button(root, width=50, height=2, font="Italic", text="check", command=checkping)
+cf = ("Italic", 14)
+check.config(font=cf)
 settings = Button(root, width=40, height=2, text="settings")
 
 btn.place(x=40, y=0)
 kn.place(x=590, y=200)
 png.place(x=500, y=200)
-check.place(x=450, y=600)
+check.place(x=420, y=600)
 # settings.place(x=510,y=200)
 
 root.mainloop()
