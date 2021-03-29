@@ -7,7 +7,7 @@ to = platform.system()
 
 root = Tk()
 
-root.title("online check")
+root.title("pinger-dev")
 
 root.geometry("1400x700")
 
@@ -22,7 +22,7 @@ kn.insert(END, "")
 def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
  btn.forget()
  settings = Tk()
- settings.title("pinger > settings") #vimyslíme asi lepší název pro app
+ settings.title("pinger > settings") #vymyslíme asi lepší název pro app
  settings.geometry("1400x700")
 
  def chkset(): #zobrazí entry
@@ -76,62 +76,76 @@ def checkping():
             try:
                 knc = socket.gethostbyname(png.get() + ".xyz")
                 inf = Label(root, text="[info] available with .xyz", fg="darkred", font="Italic")
-                inf.place(x=560, y=400)
+                inf.place(x=560, y=360)
             except:
                 pass
 
             try:
                 knc = socket.gethostbyname(png.get() + ".sk")
                 inf = Label(root, text="[info] available with .sk", fg="darkblue", font="Intalic")
-                inf.place(x=560, y=420)
+                inf.place(x=560, y=380)
             except:
                 pass
 
             try:
                 knc = socket.gethostbyname(png.get() + ".eu")
                 inf = Label(root, text="[info] available with .eu", fg="darkgreen", font="Italic")
-                inf.place(x=560, y=440)
+                inf.place(x=560, y=400)
             except:
                 pass
 
             try:
                 knc = socket.gethostbyname(png.get() + ".cz")
                 inf = Label(root, text="[info] available with .cz", fg="darkgreen", font="Italic")
-                inf.place(x=560, y=460)
+                inf.place(x=560, y=420)
             except:
                 pass
 
             try:
                 knc = socket.gethostbyname(png.get() + ".gg")
                 inf = Label(root, text="[info] available with .gg", fg="darkgreen", font="Italic")
-                inf.place(x=560, y=480)
+                inf.place(x=560, y=440)
             except:
                 pass
 
             try:
                 knc = socket.gethostbyname(png.get() + ".net")
                 inf = Label(root, text="[info] available with .net", fg="darkgreen", font="Italic")
-                inf.place(x=560, y=500)
+                inf.place(x=560, y=460)
             except:
                 pass
 
             try:
                 knc = socket.gethostbyname(png.get() + ".pl")
                 inf = Label(root, text="[info] available with .pl", fg="darkgreen", font="Italic")
-                inf.place(x=560, y=520)
+                inf.place(x=560, y=480)
             except:
                 pass
 
             try:
                 knc = socket.gethostbyname(png.get() + ".tk")
                 inf = Label(root, text="[info] available with .tk", fg="darkblue", font="Italic")
-                inf.place(x=560, y=540)
+                inf.place(x=560, y=500)
             except:
                 pass
 
             try:
                 knc = socket.gethostbyname(png.get() + ".com")
                 inf = Label(root, text="[info] available with .com", fg="darkgreen", font="Italic")
+                inf.place(x=560, y=520)
+            except:
+                pass
+
+            try:
+                knc = socket.gethostbyname(png.get() + ".online")
+                inf = Label(root, text="[info] available with .online", fg="darkgreen", font="Italic")
+                inf.place(x=560, y=540)
+            except:
+                pass
+
+            try:
+                knc = socket.gethostbyname(png.get() + ".org")
+                inf = Label(root, text="[info] available with .org", fg="darkgreen", font="Italic")
                 inf.place(x=560, y=560)
             except:
                 pass
