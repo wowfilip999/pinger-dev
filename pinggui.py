@@ -1,15 +1,69 @@
 from tkinter import *
 import config as conf
 import platform
+import platform
 import os
 
+
 to = platform.system()
+
+p = platform.system()
+
+
+teamthanks = Tk()
+teamthanks.title("pinger-dev /development version/ for wiew app window close this window")
+teamthanks.geometry("1400x700")
+
+zuraximg = PhotoImage(file = "zurax.png")
+dominikimg = PhotoImage(file = "dominik.png")
+wowfilip999img = PhotoImage(file = "wowfilip999.png")
+
+import webbrowser
+
+def zuraxfunct():
+ webbrowser.open("https://github.com/ZuraxCraft")
+
+def dominikfunct():
+ webbrowser.open("https://github.com/DominikSLK")
+
+def filipfunct():
+ webbrowser.open("https://github.com/wowfilip999")
+
+thkt = Label(teamthanks,text="THANKS FOR DOWNLOADING BY PINGER DEVELOPERS TEAM",font="Italic")
+dev1 = Button(teamthanks,text="ZuraxCraft",font="Italic",fg="green",image=zuraximg,bg="white",command=zuraxfunct,borderwidth=2)
+dev2 = Button(teamthanks,font="Italic",fg="green",image=dominikimg,bg="white",command=dominikfunct,borderwidth=2)
+dev3 = Button(teamthanks,fg="green",image=wowfilip999img,bg="white",command=filipfunct,borderwidth=2)
+dev1text = Label(teamthanks,text="ZuraxCraft",font="Italic",fg="black",bg="gray")
+dev2text = Label(teamthanks,text="DominikSLK",font="Italic",fg="black",bg="gray")
+dev3text = Label(teamthanks,text="wowfilip999",font="Italic",fg="black",bg="gray")
+thk = Button(teamthanks,text="about pinger",width=50,height=2,bg="lightgray",borderwidth=2)
+tt = ("Italic", 17)
+thkt.config(font=tt)
+
+dev1text.place(x=500,y=100)
+dev1.place(x=470,y=150)
+dev2.place(x=640,y=150)
+dev3.place(x=810,y=150)
+dev3text.place(x=840,y=100)
+dev2text.place(x=670,y=100)
+#zuraximg.place(x=500,y=200)
+thkt.place(x=410,y=20)
+thk.place(x=500,y=500)
+
+
 
 root = Tk()
 
 root.title("pinger-dev")
 
-root.geometry("1400x700")
+
+if p == "Windows":
+  root.geometry("1400x700")
+  root.resizable(0, 0)
+
+if p == "Linux":
+  root.geometry("1400x700")
+  root.resizable(0,0)
 
 kn = Entry(root, width=30, font="Italic", bg="red")
 png = Entry(root, width=40, font="Sans",bg="lightgray")
@@ -18,6 +72,14 @@ kn.insert(END, "")
 
 
 # btn = Button(root,width=120,height=2,font="Italic",fg="red",text="waiting...")
+
+def helpfunct():
+ what = Label(root,text="here write url ->")
+ what2 = Label(root,text="click waiting... for wiew settings ->")
+ what3 = Label(root,text="after write url click here  ->")
+ what.place(x=390,y=200)
+ what2.place(x=390,y=100)
+ what3.place(x=210, y=600)
 
 def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
  btn.forget()
@@ -178,8 +240,12 @@ btn2 = Button(root, width=120, height=2, font="Italic", fg="darkgreen", text="on
 btn2.place(x=50, y=0)
 
 btn = Button(root, width=120, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct)
-check = Button(root, width=50, height=2, font="Italic", text="check", command=checkping)
+help = Button(root,width=2,height=1,fg="blue",text="?",command=helpfunct)
+check = Button(root, width=40, height=2, font="Italic", text="check", command=checkping)
 cf = ("Italic", 14)
+ch = ("Italic", 9)
+
+help.config(font=ch)
 check.config(font=cf)
 settings = Button(root, width=40, height=2, text="settings")
 
@@ -187,6 +253,7 @@ btn.place(x=40, y=0)
 kn.place(x=590, y=200)
 png.place(x=500, y=200)
 check.place(x=420, y=600)
+help.place(x=905,y=200)
 # settings.place(x=510,y=200)
 
 root.mainloop()
