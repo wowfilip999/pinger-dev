@@ -41,9 +41,9 @@ tt = ("Italic", 17)
 thkt.config(font=tt)
 
 dev1text.place(x=500,y=100)
-dev1.place(x=470,y=150)
-dev2.place(x=640,y=150)
-dev3.place(x=810,y=150)
+dev1.place(x=470,y=140)
+dev2.place(x=640,y=140)
+dev3.place(x=810,y=140)
 dev3text.place(x=840,y=100)
 dev2text.place(x=670,y=100)
 #zuraximg.place(x=500,y=200)
@@ -71,7 +71,7 @@ png.insert(END, "")
 kn.insert(END, "")
 
 
-# btn = Button(root,width=120,height=2,font="Italic",fg="red",text="waiting...")
+# btn = Button(root,width=140,height=2,font="Italic",fg="red",text="waiting...")
 
 def helpfunct():
  what = Label(root,text="here write url ->")
@@ -104,7 +104,7 @@ def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
   settings.destroy()
 
 
- btnn = Button(root, width=120, height=2, font="Italic",fg="darkgreen",text="opened settings...", command=settingsfunct)
+ btnn = Button(root, width=140, height=2, font="Italic",fg="darkgreen",text="opened settings...", command=settingsfunct)
  quitbtn = Button(settings,width=40, height=2, font="Times",fg="darkblue",text="exit",command=quitset,bg="lightgray",borderwidth=2)
  testfunkce = Button(settings,width=40,height=2,font="Times",fg="darkblue",text="check option",bg="lightgray",borderwidth=2)
 
@@ -119,22 +119,25 @@ def checkping():
       f = ("Italic", 14)
 
     try:
-        btn4 = Button(root, width=120, height=2, font="Italic", fg="darkgreen", text="online!")
-        t = socket.gethostbyname(png.get())
-        if "1" or ("2") or ("3") or ("4") or ("5") or ("6") or ("7") or ("8") or ("9") or ("10") in t:  # ip detection
-            iptype = Label(root, text="IPV4", font="Italic", fg="darkgreen")
-            iptype.place(x=508, y=460)
-
-        else:
-            iptype = Label(root, text="IPV6", font="Italic", fg="darkgreen")
-            iptype.place(x=508, y=460)
-
-        btn.forget()
-        try:
-           btn.forget()
-           btn4.place(x=40,y=0)
-        except:
+        btn4 = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="online!")
+        if png.get() == "":
             pass
+        else:
+            t = socket.gethostbyname(png.get())
+            if "1" or ("2") or ("3") or ("4") or ("5") or ("6") or ("7") or ("8") or ("9") or ("10") in t:  # ip detection
+                iptype = Label(root, text="IPV4", font="Italic", fg="darkgreen")
+                iptype.place(x=508, y=460)
+
+            else:
+                iptype = Label(root, text="IPV6", font="Italic", fg="darkgreen")
+                iptype.place(x=508, y=460)
+
+            btn.forget()
+            try:
+                btn.forget()
+                btn4.place(x=40,y=0)
+            except:
+                pass
 
 
         u = Label(root, text=t, fg="darkgreen", font="Italic")
@@ -143,9 +146,14 @@ def checkping():
         u.place(x=560, y=440)
 
     except:
-        btn.forget()
-        btn2 = Button(root, width=120, height=2, font="Italic", fg="darkred", text="offline!")
-        btn2.place(x=40, y=0)
+        if png.get() == "":
+            btn.forget()
+            btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="You must write something!")
+            btn2.place(x=40, y=0)
+        else:
+            btn.forget()
+            btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="offline!")
+            btn2.place(x=40, y=0)
         if conf.dom == "yes":
             try:
                 knc = socket.gethostbyname(png.get() + ".xyz")
@@ -236,10 +244,10 @@ def checkping():
                 pass
 
 
-btn2 = Button(root, width=120, height=2, font="Italic", fg="darkgreen", text="online!")
-btn2.place(x=50, y=0)
+btn2 = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="online!")
+btn2.place(x=40, y=0)
 
-btn = Button(root, width=120, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct)
+btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct)
 help = Button(root,width=2,height=1,fg="blue",text="?",command=helpfunct)
 check = Button(root, width=40, height=2, font="Italic", text="check", command=checkping)
 cf = ("Italic", 14)
