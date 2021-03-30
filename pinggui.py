@@ -29,14 +29,33 @@ def dominikfunct():
 def filipfunct():
  webbrowser.open("https://github.com/wowfilip999")
 
-thkt = Label(teamthanks,text="THANKS FOR DOWNLOADING BY PINGER DEVELOPERS TEAM",font="Italic")
+def aboutfunct():
+ about = Tk()
+ about.title("about")
+ about.geometry("1400x700")
+ about.resizable(0,0)
+
+
+ whypinger = Label(about,text="why pinger?",bg="lightgray",fg="darkblue")
+ about1 = Label(about,text="open source",bg="lightgray",fg="darkblue")
+ af = ("Italic", 20)
+ wf = ("Italic", 22)
+
+ about1.config(font=af)
+ whypinger.config(font=wf)
+ whypinger.place(x=520,y=10)
+ freet.place(x=100,y=200)
+ about1.place(x=100,y=100)
+
+
+thkt = Label(teamthanks,text="THANKS FOR DOWNLOADING BY PINGER DEVELOPERS TEAM",font="Italic",bg="lightgray")
 dev1 = Button(teamthanks,text="ZuraxCraft",font="Italic",fg="green",image=zuraximg,bg="white",command=zuraxfunct,borderwidth=2)
 dev2 = Button(teamthanks,font="Italic",fg="green",image=dominikimg,bg="white",command=dominikfunct,borderwidth=2)
 dev3 = Button(teamthanks,fg="green",image=wowfilip999img,bg="white",command=filipfunct,borderwidth=2)
 dev1text = Label(teamthanks,text="ZuraxCraft",font="Italic",fg="black",bg="gray")
 dev2text = Label(teamthanks,text="DominikSLK",font="Italic",fg="black",bg="gray")
 dev3text = Label(teamthanks,text="wowfilip999",font="Italic",fg="black",bg="gray")
-thk = Button(teamthanks,text="about pinger",width=50,height=2,bg="lightgray",borderwidth=2)
+thk = Button(teamthanks,text="about pinger",width=50,height=2,bg="lightgray",borderwidth=2,command=aboutfunct)
 tt = ("Italic", 17)
 thkt.config(font=tt)
 
@@ -56,17 +75,18 @@ root = Tk()
 
 root.title("pinger-dev")
 
-
+import theme as thm
 if p == "Windows":
   root.geometry("1400x700")
   root.resizable(0, 0)
 
 if p == "Linux":
   root.geometry("1400x700")
+  root.configure(background=thm.bg)
   root.resizable(0,0)
 
 kn = Entry(root, width=30, font="Italic", bg="red")
-png = Entry(root, width=40, font="Sans",bg="lightgray")
+png = Entry(root, width=40, font="Sans",bg="lightgray",borderwidth=2)
 png.insert(END, "")
 kn.insert(END, "")
 
@@ -103,12 +123,72 @@ def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
  def quitset():
   settings.destroy()
 
+ def setcolor():
+  themetext = Label(settings,text="background color",bg="lightgray")
+  def setblack():
+   file = open("theme.py", "w")
+   file.write('bg = "black" ')
+
+   file.close()
+
+   onpress.place(x=500,y=400)
+
+  def setgray():
+   file = open("theme.py", "w")
+   file.write('bg = "gray" ')
+
+   file.close()
+
+   onpress.place(x=500, y=400)
+
+  def setwhite():
+   file = open("theme.py", "w")
+   file.write('bg = "white" ')
+
+   file.close()
+
+   onpress.place(x=500, y=400)
+
+
+  def resetfunct():
+   file = open("theme.py", "w")
+   file.write('bg = "lightgray" ')
+
+   file.close()
+
+   onpress.place(x=500, y=400)
+
+
+
+  onpress = Label(settings,text="changens wiew on restart!",bg="darkgray",fg="darkred")
+  black = Button(settings,text="black",width=20,height=2,borderwidth=2,command=setblack,fg="darkblue",bg="black",font="Italic")
+  gray = Button(settings,text="gray",width=20,height=2,borderwidth=2,command=setgray,fg="darkblue",bg="gray",font="Italic")
+  white = Button(settings,text="white",width=20,height=2,borderwidth=2,command=setwhite,fg="darkblue",bg="white",font="Italic")
+  reset = Button(settings, text="reset", width=20, height=2, borderwidth=2, command=resetfunct, fg="darkblue", bg="lightgray",font="Italic")
+
+
+  fntheme = ("Italic", 17)
+  pr = ("Italic", 15)
+  themetext.config(font=fntheme)
+
+  onpress.config(font=pr)
+
+  themetext.place(x=200,y=50)
+
+  black.place(x=200,y=100)
+  gray.place(x=200,y=200)
+  white.place(x=200,y=150)
+  reset.place(x=200, y=250)
+
+
 
  btnn = Button(root, width=140, height=2, font="Italic",fg="darkgreen",text="opened settings...", command=settingsfunct)
  quitbtn = Button(settings,width=40, height=2, font="Times",fg="darkblue",text="exit",command=quitset,bg="lightgray",borderwidth=2)
  testfunkce = Button(settings,width=40,height=2,font="Times",fg="darkblue",text="check option",bg="lightgray",borderwidth=2)
+ theme = Button(settings,width=40,height=2,font="Times",command=setcolor,fg="darkblue",text="theme",bg="lightgray",borderwidth=2)
 
  testfunkce.place(x=500,y=10)
+ theme.place(x=500,y=110)
  quitbtn.place(x=500,y=60)
  btnn.place(x=40, y=0)
 
@@ -160,6 +240,7 @@ def checkping():
                 inf = Label(root, text="[info] available with .xyz", fg="darkred", font="Italic")
                 inf.config(font=desing.f)
                 inf.place(x=560, y=360)
+
             except:
                 pass
 
@@ -167,7 +248,15 @@ def checkping():
                 knc = socket.gethostbyname(png.get() + ".sk")
                 inf = Label(root, text="[info] available with .sk", fg="darkblue", font="Intalic")
                 inf.config(font=desing.f)
+
+                def skchk():
+                 png.insert(END, "")
+                 png.insert(END, png.get() + ".sk")
+
+
+                checksk = Button(root,text="check .sk",width=12,fg="blue",bg="white",font="Italic",command=skchk)
                 inf.place(x=560, y=380)
+                #checksk.place(x=610,y=430)
             except:
                 pass
 
@@ -223,8 +312,12 @@ def checkping():
                 knc = socket.gethostbyname(png.get() + ".com")
                 inf = Label(root, text="[info] available with .com", fg="darkgreen", font="Italic")
                 inf.config(font=desing.f)
+                comonline = "yes"
+                
+
                 inf.place(x=560, y=520)
             except:
+                comonline = "no"
                 pass
 
             try:
@@ -240,15 +333,25 @@ def checkping():
                 inf = Label(root, text="[info] available with .org", fg="darkgreen", font="Italic")
                 inf.config(font=desing.f)
                 inf.place(x=560, y=560)
+
+
             except:
                 pass
+
+
+
+
+
+
+
+
 
 
 btn2 = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="online!")
 btn2.place(x=40, y=0)
 
-btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct)
-help = Button(root,width=2,height=1,fg="blue",text="?",command=helpfunct)
+btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct,borderwidth=2)
+help = Button(root,width=2,height=1,fg="blue",text="?",command=helpfunct,borderwidth=2)
 check = Button(root, width=40, height=2, font="Italic", text="check", command=checkping)
 cf = ("Italic", 14)
 ch = ("Italic", 9)
