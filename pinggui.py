@@ -229,6 +229,7 @@ def checkping():
         if png.get() == "":
             btn.forget()
             btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="You must write something!")
+            helpfunct()
             btn2.place(x=40, y=0)
         else:
             btn.forget()
