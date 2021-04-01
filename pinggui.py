@@ -126,11 +126,14 @@ def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
   if chkotion == "basic":
     pass
 
-
  def quitset():
   settings.destroy()
   btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct,borderwidth=2, bg=thm.bg)
   btn.place(x=40, y=0)
+
+ settings.protocol("WM_DELETE_WINDOW", quitset)
+
+
 
  def setcolor():
   themetext = Label(settings,text="background color",bg="lightgray")
@@ -200,7 +203,6 @@ def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
  theme.place(x=500,y=110)
  quitbtn.place(x=500,y=60)
  btnn.place(x=40, y=0)
-
 
 def checkping():
     import socket
@@ -376,5 +378,6 @@ png.place(x=500, y=200)
 check.place(x=420, y=600)
 help.place(x=905,y=200)
 # settings.place(x=510,y=200)
+
 
 root.mainloop()
