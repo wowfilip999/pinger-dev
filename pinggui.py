@@ -78,6 +78,7 @@ root.title("pinger-dev")
 import theme as thm
 if p == "Windows":
   root.geometry("1400x700")
+  root.configure(background=thm.bg)
   root.resizable(0, 0)
 
 if p == "Linux":
