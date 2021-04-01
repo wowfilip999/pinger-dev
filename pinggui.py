@@ -122,6 +122,8 @@ def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
 
  def quitset():
   settings.destroy()
+  btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct,borderwidth=2)
+  btn.place(x=40, y=0)
 
  def setcolor():
   themetext = Label(settings,text="background color",bg="lightgray")
