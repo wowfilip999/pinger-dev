@@ -93,7 +93,7 @@ if p == "Linux":
   root.resizable(0,0)
 
 kn = Entry(root, width=30, font="Italic", bg="red")
-png = Entry(root, width=40, font="Sans",borderwidth=2, bg=thm.bg)
+png = Entry(root, width=40, font="Sans",borderwidth=2, bg=thm.bg, fg=themefg)
 png.insert(END, "")
 kn.insert(END, "")
 
