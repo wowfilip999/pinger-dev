@@ -76,6 +76,12 @@ root = Tk()
 root.title("pinger-dev")
 
 import theme as thm
+
+if thm.bg == "black":
+    themefg = "white"
+else:
+    themefg = "black"
+
 if p == "Windows":
   root.geometry("1400x700")
   root.configure(background=thm.bg)
@@ -87,7 +93,7 @@ if p == "Linux":
   root.resizable(0,0)
 
 kn = Entry(root, width=30, font="Italic", bg="red")
-png = Entry(root, width=40, font="Sans",bg="lightgray",borderwidth=2)
+png = Entry(root, width=40, font="Sans",borderwidth=2, bg=thm.bg)
 png.insert(END, "")
 kn.insert(END, "")
 
@@ -123,7 +129,7 @@ def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
 
  def quitset():
   settings.destroy()
-  btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct,borderwidth=2)
+  btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct,borderwidth=2, bg=thm.bg)
   btn.place(x=40, y=0)
 
  def setcolor():
@@ -185,7 +191,7 @@ def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
 
 
 
- btnn = Button(root, width=140, height=2, font="Italic",fg="darkgreen",text="opened settings...", command=settingsfunct)
+ btnn = Button(root, width=140, height=2, font="Italic",fg="darkgreen",text="opened settings...", command=settingsfunct, bg=thm.bg)
  quitbtn = Button(settings,width=40, height=2, font="Times",fg="darkblue",text="exit",command=quitset,bg="lightgray",borderwidth=2)
  testfunkce = Button(settings,width=40,height=2,font="Times",fg="darkblue",text="check option",bg="lightgray",borderwidth=2)
  theme = Button(settings,width=40,height=2,font="Times",command=setcolor,fg="darkblue",text="theme",bg="lightgray",borderwidth=2)
@@ -202,7 +208,7 @@ def checkping():
       f = ("Italic", 14)
 
     try:
-        btn4 = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="online!")
+        btn4 = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="online!", bg=thm.bg)
         if png.get() == "":
             pass
         else:
@@ -231,17 +237,17 @@ def checkping():
     except:
         if png.get() == "":
             btn.forget()
-            btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="You must write something!")
+            btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="You must write something!", bg=thm.bg)
             helpfunct()
             btn2.place(x=40, y=0)
         else:
             btn.forget()
-            btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="offline!")
+            btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="offline!", bg=thm.bg)
             btn2.place(x=40, y=0)
         if conf.dom == "yes":
             try:
                 knc = socket.gethostbyname(png.get() + ".xyz")
-                inf = Label(root, text="[info] available with .xyz", fg="darkred", font="Italic")
+                inf = Label(root, text="[info] available with .xyz", fg="darkred", font="Italic", bg=thm.bg)
                 inf.config(font=desing.f)
                 inf.place(x=560, y=360)
 
@@ -351,12 +357,12 @@ def checkping():
 
 
 
-btn2 = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="online!")
+btn2 = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="online!", bg=thm.bg)
 btn2.place(x=40, y=0)
 
-btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct,borderwidth=2)
-help = Button(root,width=2,height=1,fg="blue",text="?",command=helpfunct,borderwidth=2)
-check = Button(root, width=40, height=2, font="Italic", text="check", command=checkping)
+btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct,borderwidth=2, bg=thm.bg)
+help = Button(root,width=2,height=1,fg="blue",text="?",command=helpfunct,borderwidth=2, bg=thm.bg)
+check = Button(root, width=40, height=2, font="Italic", fg=themefg,text="check", command=checkping, bg=thm.bg)
 cf = ("Italic", 14)
 ch = ("Italic", 9)
 
