@@ -98,7 +98,6 @@ png.insert(END, "")
 kn.insert(END, "")
 
 
-# btn = Button(root,width=140,height=2,font="Italic",fg="red",text="waiting...")
 
 def helpfunct():
  what = Label(root,text="here write url ->")
@@ -111,7 +110,7 @@ def helpfunct():
 def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
  btn.forget()
  settings = Tk()
- settings.title("pinger > settings") #vymyslíme asi lepší název pro app
+ settings.title("pinger > settings")
  settings.geometry("1400x700")
 
  def chkset(): #zobrazí entry
@@ -120,7 +119,7 @@ def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
 
 
 
-  if chkoption == "all": # z toho nějak vykouzlím nastavení checku :D
+  if chkoption == "all": 
     pass
 
   if chkotion == "basic":
