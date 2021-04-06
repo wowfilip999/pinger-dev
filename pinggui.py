@@ -1,75 +1,74 @@
 from tkinter import *
 import config as conf
 import platform
-import platform
 import os
-
 
 to = platform.system()
 
 p = platform.system()
 
-
 teamthanks = Tk()
 teamthanks.title("pinger-dev /development version/ for wiew app window close this window")
 teamthanks.geometry("1400x700")
 
-zuraximg = PhotoImage(file = "zurax.png")
-dominikimg = PhotoImage(file = "dominik.png")
-wowfilip999img = PhotoImage(file = "wowfilip999.png")
+zuraximg = PhotoImage(file="zurax.png")
+dominikimg = PhotoImage(file="dominik.png")
+wowfilip999img = PhotoImage(file="wowfilip999.png")
 
 import webbrowser
 
+
 def zuraxfunct():
- webbrowser.open("https://github.com/ZuraxCraft")
+    webbrowser.open("https://github.com/ZuraxCraft")
+
 
 def dominikfunct():
- webbrowser.open("https://github.com/DominikSLK")
+    webbrowser.open("https://github.com/DominikSLK")
+
 
 def filipfunct():
- webbrowser.open("https://github.com/wowfilip999")
+    webbrowser.open("https://github.com/wowfilip999")
+
 
 def aboutfunct():
- about = Tk()
- about.title("about")
- about.geometry("1400x700")
- about.resizable(0,0)
+    about = Tk()
+    about.title("about")
+    about.geometry("1400x700")
+    about.resizable(0, 0)
+
+    whypinger = Label(about, text="why pinger?", bg="lightgray", fg="darkblue")
+    about1 = Label(about, text="open source", bg="lightgray", fg="darkblue")
+    af = ("Italic", 20)
+    wf = ("Italic", 22)
+
+    about1.config(font=af)
+    whypinger.config(font=wf)
+    whypinger.place(x=520, y=10)
+    freet.place(x=100, y=200)
+    about1.place(x=100, y=100)
 
 
- whypinger = Label(about,text="why pinger?",bg="lightgray",fg="darkblue")
- about1 = Label(about,text="open source",bg="lightgray",fg="darkblue")
- af = ("Italic", 20)
- wf = ("Italic", 22)
-
- about1.config(font=af)
- whypinger.config(font=wf)
- whypinger.place(x=520,y=10)
- freet.place(x=100,y=200)
- about1.place(x=100,y=100)
-
-
-thkt = Label(teamthanks,text="THANKS FOR DOWNLOADING BY PINGER DEVELOPERS TEAM",font="Italic",bg="lightgray")
-dev1 = Button(teamthanks,text="ZuraxCraft",font="Italic",fg="green",image=zuraximg,bg="white",command=zuraxfunct,borderwidth=2)
-dev2 = Button(teamthanks,font="Italic",fg="green",image=dominikimg,bg="white",command=dominikfunct,borderwidth=2)
-dev3 = Button(teamthanks,fg="green",image=wowfilip999img,bg="white",command=filipfunct,borderwidth=2)
-dev1text = Label(teamthanks,text="ZuraxCraft",font="Italic",fg="black",bg="gray")
-dev2text = Label(teamthanks,text="DominikSLK",font="Italic",fg="black",bg="gray")
-dev3text = Label(teamthanks,text="wowfilip999",font="Italic",fg="black",bg="gray")
-thk = Button(teamthanks,text="about pinger",width=50,height=2,bg="lightgray",borderwidth=2,command=aboutfunct)
+thkt = Label(teamthanks, text="THANKS FOR DOWNLOADING BY PINGER DEVELOPERS TEAM", font="Italic", bg="lightgray")
+dev1 = Button(teamthanks, text="ZuraxCraft", font="Italic", fg="green", image=zuraximg, bg="white", command=zuraxfunct,
+              borderwidth=2)
+dev2 = Button(teamthanks, font="Italic", fg="green", image=dominikimg, bg="white", command=dominikfunct, borderwidth=2)
+dev3 = Button(teamthanks, fg="green", image=wowfilip999img, bg="white", command=filipfunct, borderwidth=2)
+dev1text = Label(teamthanks, text="ZuraxCraft", font="Italic", fg="black", bg="gray")
+dev2text = Label(teamthanks, text="DominikSLK", font="Italic", fg="black", bg="gray")
+dev3text = Label(teamthanks, text="wowfilip999", font="Italic", fg="black", bg="gray")
+thk = Button(teamthanks, text="about pinger", width=50, height=2, bg="lightgray", borderwidth=2, command=aboutfunct)
 tt = ("Italic", 17)
 thkt.config(font=tt)
 
-dev1text.place(x=500,y=100)
-dev1.place(x=470,y=140)
-dev2.place(x=640,y=140)
-dev3.place(x=810,y=140)
-dev3text.place(x=840,y=100)
-dev2text.place(x=670,y=100)
-#zuraximg.place(x=500,y=200)
-thkt.place(x=410,y=20)
-thk.place(x=500,y=500)
-
-
+dev1text.place(x=500, y=100)
+dev1.place(x=470, y=140)
+dev2.place(x=640, y=140)
+dev3.place(x=810, y=140)
+dev3text.place(x=840, y=100)
+dev2text.place(x=670, y=100)
+# zuraximg.place(x=500,y=200)
+thkt.place(x=410, y=20)
+thk.place(x=500, y=500)
 
 root = Tk()
 
@@ -82,131 +81,135 @@ if thm.bg == "black":
 else:
     themefg = "black"
 
-if p == "Windows":
-  root.geometry("1400x700")
-  root.configure(background=thm.bg)
-  root.resizable(0, 0)
 
-if p == "Linux":
-  root.geometry("1400x700")
-  root.configure(background=thm.bg)
-  root.resizable(0,0)
+root.geometry("1400x700")
+root.configure(background=thm.bg)
+root.resizable(0, 0)
+
 
 kn = Entry(root, width=30, font="Italic", bg="red")
-png = Entry(root, width=40, font="Sans",borderwidth=2, bg=thm.bg, fg=themefg)
+png = Entry(root, width=40, font="Sans", borderwidth=2, bg=thm.bg, fg=themefg)
 png.insert(END, "")
 kn.insert(END, "")
 
 
 
 def helpfunct():
- what = Label(root,text="here write url ->")
- what2 = Label(root,text="click waiting... for wiew settings ->")
- what3 = Label(root,text="after write url click here  ->")
- what.place(x=390,y=200)
- what2.place(x=390,y=100)
+ try:
+   if enable == "yes":
+     print("f")
+ except:
+     pass
+
+ what = Label(root, text="here write url ->")
+ what2 = Label(root, text="click waiting... for wiew settings ->")
+ what3 = Label(root, text="after write url click here  ->")
+ what.place(x=390, y=200)
+ what2.place(x=390, y=100)
  what3.place(x=210, y=600)
-
-def settingsfunct(): #tady je settings co vyběhne po kliknutí na wait
- btn.forget()
- settings = Tk()
- settings.title("pinger > settings")
- settings.geometry("1400x700")
-
- def chkset(): #zobrazí entry
-  chkoption = Entry(settings,width=20)
-  chkoption.insert(END , "")
+ enable ="yes"
 
 
 
-  if chkoption == "all": 
-    pass
+def settingsfunct():
+    btn.forget()
+    settings = Tk()
+    settings.title("pinger > settings")
+    settings.geometry("1400x700")
 
-  if chkotion == "basic":
-    pass
+    def chkset():
+        chkoption = Entry(settings, width=20)
+        chkoption.insert(END, "")
 
- def quitset():
-  settings.destroy()
-  btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct,borderwidth=2, bg=thm.bg)
-  btn.place(x=40, y=0)
+        if chkoption == "all":
+            pass
 
- settings.protocol("WM_DELETE_WINDOW", quitset)
+        if chkotion == "basic":
+            pass
 
+    def quitset():
+        settings.destroy()
+        btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...", command=settingsfunct,
+                     borderwidth=2, bg=thm.bg)
+        btn.place(x=40, y=0)
 
+    def setcolor():
+        themetext = Label(settings, text="background color", bg="lightgray")
 
- def setcolor():
-  themetext = Label(settings,text="background color",bg="lightgray")
-  def setblack():
-   file = open("theme.py", "w")
-   file.write('bg = "black" ')
+        def setblack():
+            file = open("theme.py", "w")
+            file.write('bg = "black" ')
 
-   file.close()
+            file.close()
 
-   onpress.place(x=500,y=400)
+            onpress.place(x=500, y=400)
 
-  def setgray():
-   file = open("theme.py", "w")
-   file.write('bg = "gray" ')
+        def setgray():
+            file = open("theme.py", "w")
+            file.write('bg = "gray" ')
 
-   file.close()
+            file.close()
 
-   onpress.place(x=500, y=400)
+            onpress.place(x=500, y=400)
 
-  def setwhite():
-   file = open("theme.py", "w")
-   file.write('bg = "white" ')
+        def setwhite():
+            file = open("theme.py", "w")
+            file.write('bg = "white" ')
 
-   file.close()
+            file.close()
 
-   onpress.place(x=500, y=400)
+            onpress.place(x=500, y=400)
 
+        def resetfunct():
+            file = open("theme.py", "w")
+            file.write('bg = "lightgray" ')
 
-  def resetfunct():
-   file = open("theme.py", "w")
-   file.write('bg = "lightgray" ')
+            file.close()
 
-   file.close()
+            onpress.place(x=500, y=400)
 
-   onpress.place(x=500, y=400)
+        onpress = Label(settings, text="changens wiew on restart!", bg="darkgray", fg="darkred")
+        black = Button(settings, text="black", width=20, height=2, borderwidth=2, command=setblack, fg="darkblue",
+                       bg="black", font="Italic")
+        gray = Button(settings, text="gray", width=20, height=2, borderwidth=2, command=setgray, fg="darkblue",
+                      bg="gray", font="Italic")
+        white = Button(settings, text="white", width=20, height=2, borderwidth=2, command=setwhite, fg="darkblue",
+                       bg="white", font="Italic")
+        reset = Button(settings, text="reset", width=20, height=2, borderwidth=2, command=resetfunct, fg="darkblue",
+                       bg="lightgray", font="Italic")
 
+        fntheme = ("Italic", 17)
+        pr = ("Italic", 15)
+        themetext.config(font=fntheme)
 
+        onpress.config(font=pr)
 
-  onpress = Label(settings,text="changens wiew on restart!",bg="darkgray",fg="darkred")
-  black = Button(settings,text="black",width=20,height=2,borderwidth=2,command=setblack,fg="darkblue",bg="black",font="Italic")
-  gray = Button(settings,text="gray",width=20,height=2,borderwidth=2,command=setgray,fg="darkblue",bg="gray",font="Italic")
-  white = Button(settings,text="white",width=20,height=2,borderwidth=2,command=setwhite,fg="darkblue",bg="white",font="Italic")
-  reset = Button(settings, text="reset", width=20, height=2, borderwidth=2, command=resetfunct, fg="darkblue", bg="lightgray",font="Italic")
+        themetext.place(x=200, y=50)
 
+        black.place(x=200, y=100)
+        gray.place(x=200, y=200)
+        white.place(x=200, y=150)
+        reset.place(x=200, y=250)
 
-  fntheme = ("Italic", 17)
-  pr = ("Italic", 15)
-  themetext.config(font=fntheme)
+    btnn = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="opened settings...",
+                  command=settingsfunct, bg=thm.bg)
+    quitbtn = Button(settings, width=40, height=2, font="Times", fg="darkblue", text="exit", command=quitset,
+                     bg="lightgray", borderwidth=2)
+    testfunkce = Button(settings, width=40, height=2, font="Times", fg="darkblue", text="check option", bg="lightgray",
+                        borderwidth=2)
+    theme = Button(settings, width=40, height=2, font="Times", command=setcolor, fg="darkblue", text="theme",
+                   bg="lightgray", borderwidth=2)
 
-  onpress.config(font=pr)
+    testfunkce.place(x=500, y=10)
+    theme.place(x=500, y=110)
+    quitbtn.place(x=500, y=60)
+    btnn.place(x=40, y=0)
 
-  themetext.place(x=200,y=50)
-
-  black.place(x=200,y=100)
-  gray.place(x=200,y=200)
-  white.place(x=200,y=150)
-  reset.place(x=200, y=250)
-
-
-
- btnn = Button(root, width=140, height=2, font="Italic",fg="darkgreen",text="opened settings...", command=settingsfunct, bg=thm.bg)
- quitbtn = Button(settings,width=40, height=2, font="Times",fg="darkblue",text="exit",command=quitset,bg="lightgray",borderwidth=2)
- testfunkce = Button(settings,width=40,height=2,font="Times",fg="darkblue",text="check option",bg="lightgray",borderwidth=2)
- theme = Button(settings,width=40,height=2,font="Times",command=setcolor,fg="darkblue",text="theme",bg="lightgray",borderwidth=2)
-
- testfunkce.place(x=500,y=10)
- theme.place(x=500,y=110)
- quitbtn.place(x=500,y=60)
- btnn.place(x=40, y=0)
 
 def checkping():
     import socket
     class desing:
-      f = ("Italic", 14)
+        f = ("Italic", 14)
 
     try:
         btn4 = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="online!", bg=thm.bg)
@@ -225,7 +228,7 @@ def checkping():
             btn.forget()
             try:
                 btn.forget()
-                btn4.place(x=40,y=0)
+                btn4.place(x=40, y=0)
             except:
                 pass
 
@@ -238,7 +241,8 @@ def checkping():
     except:
         if png.get() == "":
             btn.forget()
-            btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="You must write something!", bg=thm.bg)
+            btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="You must write something!",
+                          bg=thm.bg)
             helpfunct()
             btn2.place(x=40, y=0)
         else:
@@ -261,13 +265,11 @@ def checkping():
                 inf.config(font=desing.f)
 
                 def skchk():
-                 png.insert(END, "")
-                 png.insert(END, png.get() + ".sk")
+                    png.insert(END, "")
+                    png.insert(END, png.get() + ".sk")
 
-
-                checksk = Button(root,text="check .sk",width=12,fg="blue",bg="white",font="Italic",command=skchk)
+                checksk = Button(root, text="check .sk", width=12, fg="blue", bg="white", font="Italic", command=skchk)
                 inf.place(x=560, y=380)
-                #checksk.place(x=610,y=430)
             except:
                 pass
 
@@ -324,7 +326,6 @@ def checkping():
                 inf = Label(root, text="[info] available with .com", fg="darkgreen", font="Italic")
                 inf.config(font=desing.f)
                 comonline = "yes"
-                
 
                 inf.place(x=560, y=520)
             except:
@@ -350,20 +351,12 @@ def checkping():
                 pass
 
 
-
-
-
-
-
-
-
-
 btn2 = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="online!", bg=thm.bg)
 btn2.place(x=40, y=0)
 
-btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...",command=settingsfunct,borderwidth=2, bg=thm.bg)
-help = Button(root,width=2,height=1,fg="blue",text="?",command=helpfunct,borderwidth=2, bg=thm.bg)
-check = Button(root, width=40, height=2, font="Italic", fg=themefg,text="check", command=checkping, bg=thm.bg)
+btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...", command=settingsfunct,borderwidth=2, bg=thm.bg)
+help = Button(root, width=2, height=1, fg="blue", text="?", command=helpfunct, borderwidth=2, bg=thm.bg)
+check = Button(root, width=40, height=2, font="Italic", fg=themefg, text="check", command=checkping, bg=thm.bg)
 cf = ("Italic", 14)
 ch = ("Italic", 9)
 
@@ -375,8 +368,7 @@ btn.place(x=40, y=0)
 kn.place(x=590, y=200)
 png.place(x=500, y=200)
 check.place(x=420, y=600)
-help.place(x=905,y=200)
-# settings.place(x=510,y=200)
+help.place(x=905, y=200)
 
 
 root.mainloop()
