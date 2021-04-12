@@ -364,7 +364,7 @@ help.config(font=ch)
 check.config(font=cf)
 settings = Button(root, width=40, height=2, text="settings")
 
-btn.place(x=40, y=0)
+btn.pack(side= TOP)
 kn.place(x=590, y=200)
 png.place(x=500, y=200)
 check.place(x=420, y=600)
