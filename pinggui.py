@@ -61,7 +61,6 @@ dev2.place(x=640, y=140)
 dev3.place(x=810, y=140)
 dev3text.place(x=840, y=100)
 dev2text.place(x=670, y=100)
-# zuraximg.place(x=500,y=200)
 thkt.place(x=410, y=20)
 thk.place(x=500, y=500)
 
