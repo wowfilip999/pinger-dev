@@ -203,7 +203,7 @@ def settingsfunct():
     testfunkce.place(x=500, y=10)
     theme.place(x=500, y=110)
     quitbtn.place(x=500, y=60)
-    btnn.place(x=40, y=0)
+    btnn.place(side= TOP)
 
 
 def checkping():
