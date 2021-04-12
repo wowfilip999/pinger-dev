@@ -95,19 +95,12 @@ kn.insert(END, "")
 
 
 def helpfunct():
- try:
-   if enable == "yes":
-     print("f")
- except:
-     pass
-
  what = Label(root, text="here write url ->")
  what2 = Label(root, text="click waiting... for wiew settings ->")
  what3 = Label(root, text="after write url click here  ->")
  what.place(x=390, y=200)
  what2.place(x=390, y=100)
  what3.place(x=210, y=600)
- enable ="yes"
 
 
 
