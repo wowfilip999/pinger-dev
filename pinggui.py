@@ -1,11 +1,6 @@
 from tkinter import *
 import config as conf
-import platform
 import os
-
-to = platform.system()
-
-p = platform.system()
 
 teamthanks = Tk()
 teamthanks.title("pinger-dev /development version/ for wiew app window close this window")
@@ -345,7 +340,7 @@ def checkping():
 
 
 btn2 = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="online!", bg=thm.bg)
-btn2.place(x=40, y=0)
+btn2.pack(side = TOP) #x= 40 y=0
 
 btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...", command=settingsfunct,borderwidth=2, bg=thm.bg)
 help = Button(root, width=2, height=1, fg="blue", text="?", command=helpfunct, borderwidth=2, bg=thm.bg)
