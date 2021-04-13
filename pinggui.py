@@ -101,6 +101,11 @@ def helpfunct():
 
 
 def settingsfunct():
+    try:
+      btnn.forget()
+    except:
+        pass
+
     btn.forget()
     settings = Tk()
     settings.title("pinger > settings")
@@ -180,6 +185,7 @@ def settingsfunct():
         white.place(x=200, y=150)
         reset.place(x=200, y=250)
 
+
     btnn = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="opened settings...",
                   command=settingsfunct, bg=thm.bg)
     quitbtn = Button(settings, width=40, height=2, font="Times", fg="darkblue", text="exit", command=quitset,
@@ -192,7 +198,7 @@ def settingsfunct():
     testfunkce.place(x=500, y=10)
     theme.place(x=500, y=110)
     quitbtn.place(x=500, y=60)
-    btnn.pack(side= TOP)
+    btnn.place(x=40,y=0)
 
 
 def checkping():
@@ -217,7 +223,7 @@ def checkping():
             btn.forget()
             try:
                 btn.forget()
-                btn4.place(x=40, y=0)
+                btn4.place(side = TOP)
             except:
                 pass
 
@@ -233,7 +239,7 @@ def checkping():
             btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="You must write something!",
                           bg=thm.bg)
             helpfunct()
-            btn2.place(x=40, y=0)
+            btn2.pack(side= TOP)
         else:
             btn.forget()
             btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="offline!", bg=thm.bg)
@@ -340,23 +346,42 @@ def checkping():
                 pass
 
 
+
+
+
+def checkfunct():
+ confcheck = Tk()
+ confcheck.geometry("1400x700")
+ confcheck.resizable(0,0)
+
+ checkade = Entry(confcheck,width=50)
+ adventcheck = Entry(confcheck,width=50)
+
+
+ adventcheck.pack(side= TOP)
+
+
 btn2 = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="online!", bg=thm.bg)
 btn2.place(y=0,x=40)
 
 btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...", command=settingsfunct,borderwidth=2, bg=thm.bg)
 help = Button(root, width=2, height=1, fg="blue", text="?", command=helpfunct, borderwidth=2, bg=thm.bg)
 check = Button(root, width=40, height=2, font="Italic", fg=themefg, text="check", command=checkping, bg=thm.bg)
+checkad = Button(root, width=40, height=2, font="Italic", fg=themefg, text="check(more options)", command=checkfunct, bg=thm.bg)
+
 cf = ("Italic", 14)
 ch = ("Italic", 9)
 
 help.config(font=ch)
 check.config(font=cf)
+checkad.config(font=cf)
 settings = Button(root, width=40, height=2, text="settings")
 
 btn.pack(side= TOP)
 kn.place(x=590, y=200)
 png.place(x=500, y=200)
-check.place(x=420, y=600)
+check.place(x=420, y=595)
+checkad.place(x=420,y=655)
 help.place(x=905, y=200)
 
 
