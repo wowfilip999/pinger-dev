@@ -1,6 +1,5 @@
 from tkinter import *
 import config as conf
-import platform
 import os
 
 
@@ -106,11 +105,11 @@ def settingsfunct():
     settings.geometry("1400x700")
 
 
-    def quitset():
+    def quit():
         settings.destroy()
-        btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...", command=settingsfunct,
-                     borderwidth=2, bg=thm.bg)
-        btn.place(x=40, y=0)
+        btn = Button(root, width=140, height=2, font="Italic", fg="red", text="waiting...", command=settingsfunct,borderwidth=2, bg=thm.bg)
+        btn.place(x=20, y=0)
+        btnn.forget()
 
     def setcolor():
         themetext = Label(settings, text="background color", bg="lightgray")
@@ -139,10 +138,6 @@ def settingsfunct():
 
             onpress.place(x=500, y=400)
         
-        def customfunct():
-         customenter = Entry()
-         customenter.insert(END, "write here")
-         customenter.place(x=200,y=300)
 
         def resetfunct():
             file = open("theme.py", "w")
@@ -158,7 +153,6 @@ def settingsfunct():
         white = Button(settings, text="white", width=20, height=2, borderwidth=2, command=setwhite, fg="darkblue",bg="white", font="Italic")
         reset = Button(settings, text="reset", width=20, height=2, borderwidth=2, command=resetfunct, fg="darkblue",bg="lightgray", font="Italic")
 
-        customcrl = Button(settings, text="white", width=20, height=2, borderwidth=2, command=customfunct, fg="darkblue",bg="white", font="Italic")
         fntheme = ("Italic", 17)
         pr = ("Italic", 15)
         themetext.config(font=fntheme)
@@ -173,18 +167,12 @@ def settingsfunct():
         reset.place(x=200, y=250)
 
 
-    btnn = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="opened settings...",
-                  command=settingsfunct, bg=thm.bg)
-    quitbtn = Button(settings, width=40, height=2, font="Times", fg="darkblue", text="exit", command=quitset,
-                     bg="lightgray", borderwidth=2)
-    testfunkce = Button(settings, width=40, height=2, font="Times", fg="darkblue", text="check option", bg="lightgray",
-                        borderwidth=2)
-    theme = Button(settings, width=40, height=2, font="Times", command=setcolor, fg="darkblue", text="theme",
-                   bg="lightgray", borderwidth=2)
+    btnn = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="opened settings...",command=settingsfunct, bg=thm.bg)
+    quitbtn = Button(settings, width=40, height=2, font="Times", fg="darkblue", text="exit", command=quit,bg="lightgray", borderwidth=2)
+    theme = Button(settings, width=40, height=2, font="Times", command=setcolor, fg="darkblue", text="theme",bg="lightgray", borderwidth=2)
 
-    testfunkce.place(x=500, y=10)
-    theme.place(x=500, y=110)
-    quitbtn.place(x=500, y=60)
+    theme.place(x=500, y=0)
+    quitbtn.place(x=500, y=50)
     btnn.pack(side =TOP)
 
 
@@ -235,9 +223,9 @@ def checkping():
         if conf.dom == "yes":
             try:
                 knc = socket.gethostbyname(png.get() + ".xyz")
-                inf = Label(root, text="[info] available with .xyz", fg="darkred", font="Italic", bg=thm.bg)
-                inf.config(font=desing.f)
-                inf.place(x=560, y=360)
+                xyzav = Label(root, text="[info] available with .xyz", fg="darkred", font="Italic", bg=thm.bg)
+                xyzav.config(font=desing.f)
+                xyzav.place(x=560, y=360)
 
             except:
                 pass
@@ -252,7 +240,7 @@ def checkping():
                     png.insert(END, png.get() + ".sk")
 
                 checksk = Button(root, text="check .sk", width=12, fg="blue", bg="white", font="Italic", command=skchk)
-                inf.place(x=560, y=380)
+                inf.place(x=560, y=390)
             except:
                 pass
 
@@ -308,11 +296,8 @@ def checkping():
                 knc = socket.gethostbyname(png.get() + ".com")
                 inf = Label(root, text="[info] available with .com", fg="darkgreen", font="Italic")
                 inf.config(font=desing.f)
-                comonline = "yes"
-
                 inf.place(x=560, y=520)
             except:
-                comonline = "no"
                 pass
 
             try:
