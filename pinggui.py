@@ -105,15 +105,6 @@ def settingsfunct():
     settings.title("pinger > settings")
     settings.geometry("1400x700")
 
-    def chkset():
-        chkoption = Entry(settings, width=20)
-        chkoption.insert(END, "")
-
-        if chkoption == "all":
-            pass
-
-        if chkotion == "basic":
-            pass
 
     def quitset():
         settings.destroy()
