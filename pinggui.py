@@ -4,67 +4,61 @@ import platform
 import os
 
 
-teamthanks = Tk()
-teamthanks.title("pinger-dev /development version/ for wiew app window close this window")
-teamthanks.geometry("1400x700")
+if conf.wiewthk == "yes":
+  teamthanks = Tk()
+  teamthanks.title("pinger-dev /development version/ for wiew app window close this window")
+  teamthanks.geometry("1400x700")
 
-zuraximg = PhotoImage(file="zurax.png")
-dominikimg = PhotoImage(file="dominik.png")
-wowfilip999img = PhotoImage(file="wowfilip999.png")
+  zuraximg = PhotoImage(file="zurax.png")
+  dominikimg = PhotoImage(file="dominik.png")
+  wowfilip999img = PhotoImage(file="wowfilip999.png")
 
-import webbrowser
-
-
-def zuraxfunct():
-    webbrowser.open("https://github.com/ZuraxCraft")
+  import webbrowser
 
 
-def dominikfunct():
-    webbrowser.open("https://github.com/DominikSLK")
+  def zuraxfunct():
+   webbrowser.open("https://github.com/ZuraxCraft")
 
 
-def filipfunct():
-    webbrowser.open("https://github.com/wowfilip999")
+  def dominikfunct():
+   webbrowser.open("https://github.com/DominikSLK")
 
 
-def aboutfunct():
-    about = Tk()
-    about.title("about")
-    about.geometry("1400x700")
-    about.resizable(0, 0)
-
-    whypinger = Label(about, text="why pinger?", bg="lightgray", fg="darkblue")
-    about1 = Label(about, text="open source", bg="lightgray", fg="darkblue")
-    af = ("Italic", 20)
-    wf = ("Italic", 22)
-
-    about1.config(font=af)
-    whypinger.config(font=wf)
-    whypinger.place(x=520, y=10)
-    freet.place(x=100, y=200)
-    about1.place(x=100, y=100)
+  def filipfunct():
+   webbrowser.open("https://github.com/wowfilip999")
 
 
-thkt = Label(teamthanks, text="THANKS FOR DOWNLOADING BY PINGER DEVELOPERS TEAM", font="Italic", bg="lightgray")
-dev1 = Button(teamthanks, text="ZuraxCraft", font="Italic", fg="green", image=zuraximg, bg="white", command=zuraxfunct,
+  def noshowfunct():
+   f = open("config.py", "a")
+   f.write('wiewthk = "no"' + "\n")
+   f.close()
+
+
+  thkt = Label(teamthanks, text="THANKS FOR DOWNLOADING BY PINGER DEVELOPERS TEAM", font="Italic", bg="lightgray")
+  dev1 = Button(teamthanks, text="ZuraxCraft", font="Italic", fg="green", image=zuraximg, bg="white", command=zuraxfunct,
               borderwidth=2)
-dev2 = Button(teamthanks, font="Italic", fg="green", image=dominikimg, bg="white", command=dominikfunct, borderwidth=2)
-dev3 = Button(teamthanks, fg="green", image=wowfilip999img, bg="white", command=filipfunct, borderwidth=2)
-dev1text = Label(teamthanks, text="ZuraxCraft", font="Italic", fg="black", bg="gray")
-dev2text = Label(teamthanks, text="DominikSLK", font="Italic", fg="black", bg="gray")
-dev3text = Label(teamthanks, text="wowfilip999", font="Italic", fg="black", bg="gray")
-thk = Button(teamthanks, text="about pinger", width=50, height=2, bg="lightgray", borderwidth=2, command=aboutfunct)
-tt = ("Italic", 17)
-thkt.config(font=tt)
+  dev2 = Button(teamthanks, font="Italic", fg="green", image=dominikimg, bg="white", command=dominikfunct, borderwidth=2)
+  dev3 = Button(teamthanks, fg="green", image=wowfilip999img, bg="white", command=filipfunct, borderwidth=2)
+  dev1text = Label(teamthanks, text="ZuraxCraft", font="Italic", fg="black", bg="gray")
+  dev2text = Label(teamthanks, text="DominikSLK", font="Italic", fg="black", bg="gray")
+  dev3text = Label(teamthanks, text="wowfilip999", font="Italic", fg="black", bg="gray")
+  thk = Button(teamthanks, text="not show again", width=50, height=2, bg="lightgray", borderwidth=2, command=noshowfunct)
+  tt = ("Italic", 17)
+  thkt.config(font=tt)
 
-dev1text.place(x=500, y=100)
-dev1.place(x=470, y=140)
-dev2.place(x=640, y=140)
-dev3.place(x=810, y=140)
-dev3text.place(x=840, y=100)
-dev2text.place(x=670, y=100)
-thkt.place(x=410, y=20)
-thk.place(x=500, y=500)
+  dev1text.place(x=500, y=100)
+  dev1.place(x=470, y=140)
+  dev2.place(x=640, y=140)
+  dev3.place(x=810, y=140)
+  dev3text.place(x=840, y=100)
+  dev2text.place(x=670, y=100)
+  thkt.place(x=410, y=20)
+  thk.place(x=500, y=500)
+
+
+else:
+   pass
+
 
 root = Tk()
 
@@ -153,6 +147,11 @@ def settingsfunct():
             file.close()
 
             onpress.place(x=500, y=400)
+        
+        def customfunct():
+         customenter = Entry()
+         customenter.insert(END, "write here")
+         customenter.place(x=200,y=300)
 
         def resetfunct():
             file = open("theme.py", "w")
@@ -163,15 +162,12 @@ def settingsfunct():
             onpress.place(x=500, y=400)
 
         onpress = Label(settings, text="changens wiew on restart!", bg="darkgray", fg="darkred")
-        black = Button(settings, text="black", width=20, height=2, borderwidth=2, command=setblack, fg="darkblue",
-                       bg="black", font="Italic")
-        gray = Button(settings, text="gray", width=20, height=2, borderwidth=2, command=setgray, fg="darkblue",
-                      bg="gray", font="Italic")
-        white = Button(settings, text="white", width=20, height=2, borderwidth=2, command=setwhite, fg="darkblue",
-                       bg="white", font="Italic")
-        reset = Button(settings, text="reset", width=20, height=2, borderwidth=2, command=resetfunct, fg="darkblue",
-                       bg="lightgray", font="Italic")
+        black = Button(settings, text="black", width=20, height=2, borderwidth=2, command=setblack, fg="darkblue",bg="black", font="Italic")
+        gray = Button(settings, text="gray", width=20, height=2, borderwidth=2, command=setgray, fg="darkblue",bg="gray", font="Italic")
+        white = Button(settings, text="white", width=20, height=2, borderwidth=2, command=setwhite, fg="darkblue",bg="white", font="Italic")
+        reset = Button(settings, text="reset", width=20, height=2, borderwidth=2, command=resetfunct, fg="darkblue",bg="lightgray", font="Italic")
 
+        customcrl = Button(settings, text="white", width=20, height=2, borderwidth=2, command=customfunct, fg="darkblue",bg="white", font="Italic")
         fntheme = ("Italic", 17)
         pr = ("Italic", 15)
         themetext.config(font=fntheme)
@@ -361,7 +357,7 @@ ch = ("Italic", 9)
 
 help.config(font=ch)
 check.config(font=cf)
-settings = Button(root, width=40, height=2, text="settings")
+devsettings = Button(root, width=40, height=2, text="settings")
 
 btn.pack(side= TOP)
 kn.place(x=590, y=200)
