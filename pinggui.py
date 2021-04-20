@@ -76,10 +76,8 @@ root.configure(background=thm.bg)
 root.resizable(0, 0)
 
 
-kn = Entry(root, width=30, font="Italic", bg="red")
 png = Entry(root, width=40, font="Sans", borderwidth=2, bg=thm.bg, fg=themefg)
 png.insert(END, "")
-kn.insert(END, "")
 
 
 
@@ -147,7 +145,7 @@ def settingsfunct():
 
             onpress.place(x=500, y=400)
 
-        onpress = Label(settings, text="changens wiew on restart!", bg="darkgray", fg="darkred")
+        onpress = Label(settings, text="changes wiew on restart!", bg="darkgray", fg="darkred")
         black = Button(settings, text="black", width=20, height=2, borderwidth=2, command=setblack, fg="darkblue",bg="black", font="Italic")
         gray = Button(settings, text="gray", width=20, height=2, borderwidth=2, command=setgray, fg="darkblue",bg="gray", font="Italic")
         white = Button(settings, text="white", width=20, height=2, borderwidth=2, command=setwhite, fg="darkblue",bg="white", font="Italic")
@@ -212,8 +210,7 @@ def checkping():
     except:
         if png.get() == "":
             btn.forget()
-            btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="You must write something!",
-                          bg=thm.bg)
+            btn2 = Button(root, width=140, height=2, font="Italic", fg="darkred", text="You must write something!",bg=thm.bg)
             helpfunct()
             btn2.pack(side= TOP)
         else:
@@ -336,7 +333,6 @@ check.config(font=cf)
 devsettings = Button(root, width=40, height=2, text="settings")
 
 btn.pack(side= TOP)
-kn.place(x=590, y=200)
 png.place(x=500, y=200)
 check.place(x=420, y=595)
 help.place(x=905, y=200)
