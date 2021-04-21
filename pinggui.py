@@ -7,12 +7,11 @@ if conf.wiewthk == "yes":
   teamthanks = Tk()
   teamthanks.title("pinger-dev /development version/ for wiew app window close this window")
   teamthanks.geometry("1400x700")
+  import webbrowser
 
   zuraximg = PhotoImage(file="zurax.png")
   dominikimg = PhotoImage(file="dominik.png")
   wowfilip999img = PhotoImage(file="wowfilip999.png")
-
-  import webbrowser
 
 
   def zuraxfunct():
@@ -28,14 +27,14 @@ if conf.wiewthk == "yes":
 
 
   def noshowfunct():
+   teamthanks.destroy()
    f = open("config.py", "a")
    f.write('wiewthk = "no"' + "\n")
    f.close()
 
 
   thkt = Label(teamthanks, text="THANKS FOR DOWNLOADING BY PINGER DEVELOPERS TEAM", font="Italic", bg="lightgray")
-  dev1 = Button(teamthanks, text="ZuraxCraft", font="Italic", fg="green", image=zuraximg, bg="white", command=zuraxfunct,
-              borderwidth=2)
+  dev1 = Button(teamthanks, text="ZuraxCraft", font="Italic", fg="green", image=zuraximg, bg="white", command=zuraxfunct,borderwidth=2)
   dev2 = Button(teamthanks, font="Italic", fg="green", image=dominikimg, bg="white", command=dominikfunct, borderwidth=2)
   dev3 = Button(teamthanks, fg="green", image=wowfilip999img, bg="white", command=filipfunct, borderwidth=2)
   dev1text = Label(teamthanks, text="ZuraxCraft", font="Italic", fg="black", bg="gray")
@@ -71,7 +70,12 @@ else:
     themefg = "black"
 
 
-root.geometry("1400x700")
+if conf.resultion == "default":
+  root.geometry("1400x700")
+
+if conf.resultion == "custom":
+  root.geometry(conf.custom)
+
 root.configure(background=thm.bg)
 root.resizable(0, 0)
 
@@ -109,6 +113,7 @@ def settingsfunct():
         btn.place(x=20, y=0)
         btnn.forget()
 
+ 
     def setcolor():
         themetext = Label(settings, text="background color", bg="lightgray")
 
@@ -149,7 +154,7 @@ def settingsfunct():
         black = Button(settings, text="black", width=20, height=2, borderwidth=2, command=setblack, fg="darkblue",bg="black", font="Italic")
         gray = Button(settings, text="gray", width=20, height=2, borderwidth=2, command=setgray, fg="darkblue",bg="gray", font="Italic")
         white = Button(settings, text="white", width=20, height=2, borderwidth=2, command=setwhite, fg="darkblue",bg="white", font="Italic")
-        reset = Button(settings, text="reset", width=20, height=2, borderwidth=2, command=resetfunct, fg="darkblue",bg="lightgray", font="Italic")
+        reset = Button(settings, text="reset",width=20, height=2, borderwidth=2, command=resetfunct, fg="darkblue",bg="lightgray", font="Italic")
 
         fntheme = ("Italic", 17)
         pr = ("Italic", 15)
@@ -168,7 +173,6 @@ def settingsfunct():
     btnn = Button(root, width=140, height=2, font="Italic", fg="darkgreen", text="opened settings...",command=settingsfunct, bg=thm.bg)
     quitbtn = Button(settings, width=40, height=2, font="Times", fg="darkblue", text="exit", command=quit,bg="lightgray", borderwidth=2)
     theme = Button(settings, width=40, height=2, font="Times", command=setcolor, fg="darkblue", text="theme",bg="lightgray", borderwidth=2)
-
     theme.place(x=500, y=0)
     quitbtn.place(x=500, y=50)
     btnn.pack(side =TOP)
